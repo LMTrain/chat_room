@@ -5,19 +5,26 @@ import HomePage from './pages/Home'
 import FaqPage from './pages/Faq'
 import ProfilePage from './pages/Profile'
 import ServicePage from './pages/Services'
-import Sidebar from './components/Sidebar'
+import LoginPage from './pages/Login'
+import RegisteredPage from './pages/Register'
 
+import Sidebar from './components/Sidebar'
 import Navbar from 'components/Navbar'
-import NavbarClone from 'components/NavbarClone'
 
 function App() {
   return (
     <div>
       <Router>
         <Navbar />
-        <NavbarClone />
+        <Navbar id="navbar-clone" />
         <Sidebar />
         <Switch>
+        <Route path="/register">
+            <RegisteredPage />
+          </Route>
+          <Route path="/login">
+            <LoginPage />
+          </Route>
           <Route path="/services">
             <ServicePage />
           </Route>
