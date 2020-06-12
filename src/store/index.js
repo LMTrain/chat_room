@@ -28,7 +28,7 @@ const services = [{
   user: 'some_id_1',
   category: 'Mathematics',
   title: 'I will teach you programming fast',
-  description: 'I am teaching C++, JAVA, Phyton',
+  description: 'I am teaching C++, JAVA, Phyton, uygsjhds, ugjhd , iuhsjhgsu, ijfshg, kjhguyewmewb, iugdwjgds, djhbsdhg',
   price: 30,
   image: 'https://lmtrain.github.io/lm-images/assets/images/space2.webp'
 }, {

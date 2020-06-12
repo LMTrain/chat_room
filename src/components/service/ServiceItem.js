@@ -4,7 +4,7 @@ import React from 'react'
 
 const ServiceItem = ({service}) => {
 
-  const shortText = (text, maxLength = 50) => {
+  const shortText = (text, maxLength = 40) => {
 
     if (!text) { return ' '}
     if (text.length <= maxLength ) { return text }
