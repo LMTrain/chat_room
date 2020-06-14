@@ -1,27 +1,46 @@
 
 // import { createStore, applyMiddleware, compose } from 'redux'
+import { createStore, combineReducers } from 'redux'
 // import serviceApp from 'reducers'
 
 // import thunk from 'redux-thunk'
 // import logger from 'redux-logger'
 
-// const initStore = () => {
-//   const middlewares = [thunk]
-//   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const initStore = () => {
+  // const middlewares = [thunk]
+  // const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
   
-//   if (process.env.NODE_ENV !== 'production') {
-//     middlewares.push(logger)
-//   }
+  // if (process.env.NODE_ENV !== 'production') {
+  //   middlewares.push(logger)
+  // }
 
-//   const store = createStore(
-//     serviceApp, 
-//     composeEnhancers(applyMiddleware(...middlewares))
-//   )
+  // const store = createStore(
+  //   serviceApp, 
+  //   composeEnhancers(applyMiddleware(...middlewares))
+  // )
 
-//   return store
-// }
+  const serviceApp = combineReducers({
+    service: () => ({testingData: 'Hello There', testingNumber: 10})
+  })
 
-// export default initStore
+  const store = createStore(serviceApp)
+
+  return store
+
+}
+
+
+export default createStore
+
+
+
+
+
+
+
+
+
+
 
 const services = [{
   id: '2asd8sa7d98',
