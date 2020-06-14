@@ -1,4 +1,5 @@
 
+import { FETCH_SERVICES } from 'types'
 // import * as api from 'api'
 
 // export * from './services'
@@ -33,7 +34,7 @@ const services = [{
   
 export const fetchServices = () => {
     return {
-        type: 'FETCH_SERVICES',
+        type: FETCH_SERVICES,
         services
     }
 }
