@@ -1,6 +1,7 @@
 /* eslint jsx-a11y/anchor-is-valid: 0 */
 
 import React from 'react'
+// import HeroCarousel from "./HeroCarousel"
 
 
 const Hero = () => 
@@ -26,12 +27,16 @@ const Hero = () =>
           </div>
           <div className="column is-5 is-offset-1">
             <figure className="image is-4by3">
-                <img src={process.env.PUBLIC_URL + '/worker.svg'} alt="Description" />
+                <img src={process.env.PUBLIC_URL + 'https://lmtrain.github.io/lm-images/assets/images/crm7_7.jpg'} alt="Description" />
+                
             </figure>
           </div>
         </div>
       </div>
     </div>
+    {/* <div>
+      <HeroCarousel />
+    </div> */}
   </section>
 
 export default Hero

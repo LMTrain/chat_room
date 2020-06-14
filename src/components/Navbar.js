@@ -15,7 +15,7 @@ const Navbar = (props) => {
           <Link 
             to="/"
             className="navbar-item">
-             <div className="title">Serve</div>
+             <div className="title">Unity</div>
           </Link>
 
           <a className="navbar-item is-hidden-desktop is-hidden-tablet">
