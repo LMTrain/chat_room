@@ -1,5 +1,5 @@
 
-import { FETCH_SERVICES } from 'types'
+import { FETCH_SERVICES_SUCCESS } from 'types'
 
 import db from 'db'
 // import * as api from 'api'
@@ -11,40 +11,18 @@ import db from 'db'
 // export * from './connection'
 
 // export const createRef = (collection, docId) => api.createRef(collection, docId)
-
-
-
-const services = [{
-    id: '2asd8sa7d98',
-    user: 'some_id_1',
-    category: 'Mathematics',
-    title: 'I will teach you programming fast',
-    description: 'I am teaching C++, JAVA, Phyton, uygsjhds, ugjhd , iuhsjhgsu, ijfshg, kjhguyewmewb, iugdwjgds, djhbsdhg',
-    price: 30,
-    image: 'https://lmtrain.github.io/lm-images/assets/images/space2.webp'
-  }, {
-    id: 'ssa9d789as7',
-    user: 'some_id_2',
-    category: 'Progrmming',
-    title: 'I will teach you math fast',
-    description: 'I am teaching highschool mathematics, algebra, trio. I can teach',
-    price: 10,
-    image: 'https://lmtrain.github.io/lm-images/assets/images/futurecar20.jpg'
-  }]
-
-
   
 export const fetchServices = () => {
-  db.collection('services')
+  
+  return db
+    .collection('services')
     .get()
     .then(snapshot => {
-        snapshot.docs.forEach((doc) => {
-        const service = doc.data()
-        console.log(doc.data())
-      })
-    })
-    return {
-        type: FETCH_SERVICES,
+      const services = snapshot.docs.map(doc => doc.data())      
+      return {
+        type: FETCH_SERVICES_SUCCESS,
         services
-    }
+      }
+    })
+
 }

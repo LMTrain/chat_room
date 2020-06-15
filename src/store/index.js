@@ -22,13 +22,22 @@ const addLoggerToDispatch = store => {
   }
 }
 
+const addPromiseToDispatch = store => {
+  const dispatch = store.dispatch
+
+  return action => {
+    if (typeof action.then === 'function') {
+      return action.then((action) => {
+        dispatch(action)
+      })
+    }
+    return dispatch(action)
+  }
+}
+
 const initStore = () => {
   // const middlewares = [thunk]
   // const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-  
-  // if (process.env.NODE_ENV !== 'production') {
-  //   middlewares.push(logger)
-  // }
 
   // const store = createStore(
   //   serviceApp, 
@@ -40,8 +49,10 @@ const initStore = () => {
   })
   const browserSupport = window.__REDUX_DEVTOOLS_EXTENSION__&& window.__REDUX_DEVTOOLS_EXTENSION__()  
   const store = createStore(serviceApp, browserSupport)
-
-  store.dispatch = addLoggerToDispatch(store)
+  if (process.env.NODE_ENV !== 'production') {
+    store.dispatch = addLoggerToDispatch(store)   
+  }
+  store.dispatch = addPromiseToDispatch(store)
 
   return store
 
