@@ -1,10 +1,12 @@
 /* eslint jsx-a11y/anchor-is-valid: 0 */
 
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 const ServiceItem = ({service}) => {
 
-  const shortText = (text, maxLength = 40) => {
+  const shortText = (text, maxLength = 30) => {
 
     if (!text) { return ' '}
     if (text.length <= maxLength ) { return text }
@@ -17,7 +19,7 @@ const ServiceItem = ({service}) => {
       className="column is-one-third">
       <div className="feature-card is-bordered has-text-centered revealOnScroll delay-1" data-animation="fadeInLeft">
         <div className="card-title">
-          <h4>{service.title}</h4>
+          <h4>{shortText(service.title)}</h4>
         </div>
         <div className="card-icon">
           <img src={service.image} alt=""/>
@@ -26,7 +28,9 @@ const ServiceItem = ({service}) => {
           <p>{shortText(service.description)}</p>
         </div>
         <div className="card-action">
-          <a href="#" className="button btn-align-md accent-btn raised">Free Trial</a>
+          <Link 
+          to={`/services/${service.id}`}
+          className="button btn-align-md accent-btn raised">Watch Video</Link>
         </div>
       </div>
     </div>
