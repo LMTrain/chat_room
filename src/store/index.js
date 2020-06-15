@@ -7,56 +7,50 @@ import servicesReducer from 'reducers'
 // import thunk from 'redux-thunk'
 // import logger from 'redux-logger'
 
-const addLoggerToDispatch = store => {
-  const dispatch = store.dispatch
-
-  return action  => {
-    console.group(action.type)
-    console.log('%c Prev state', 'color: yellow', store.getState())
-    console.log('%c action', 'color: green', action)
-    const returnValue = dispatch(action)
-    console.log('%c next state', 'color: cyan', store.getState())
-    console.groupEnd(action.type)
-    return returnValue
-
-  }
+const addLoggerToDispatch = store => nextDispatch => action  => { 
+  console.group(action.type)
+  console.log('%c Prev state', 'color: yellow', store.getState())
+  console.log('%c action', 'color: green', action)
+  const returnValue = nextDispatch(action)
+  console.log('%c next state', 'color: cyan', store.getState())
+  console.groupEnd(action.type)
+  return returnValue
 }
 
-const addPromiseToDispatch = store => {
-  const dispatch = store.dispatch
-
-  return action => {
-    if (typeof action.then === 'function') {
-      return action.then((action) => {
-        dispatch(action)
-      })
-    }
-    return dispatch(action)
+const addPromiseToDispatch = store => nextDispatch => action => {
+  if (typeof action.then === 'function') {
+    return action.then(nextDispatch)
   }
+  return nextDispatch(action)
+}
+  
+
+
+const applyMiddlewares = (store, middlewares) => {
+  middlewares.slice().reverse().forEach(middleware => {
+    store.dispatch = middleware(store)(store.dispatch)
+  })
 }
 
 const initStore = () => {
-  // const middlewares = [thunk]
-  // const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-
-  // const store = createStore(
-  //   serviceApp, 
-  //   composeEnhancers(applyMiddleware(...middlewares))
-  // )
-
+  const middlewares = [addPromiseToDispatch]
   const serviceApp = combineReducers({
     service: servicesReducer
   })
   const browserSupport = window.__REDUX_DEVTOOLS_EXTENSION__&& window.__REDUX_DEVTOOLS_EXTENSION__()  
   const store = createStore(serviceApp, browserSupport)
-  if (process.env.NODE_ENV !== 'production') {
-    store.dispatch = addLoggerToDispatch(store)   
+  if (process.env.NODE_ENV !== 'production') {     
+    middlewares.push(addLoggerToDispatch)  
   }
-  store.dispatch = addPromiseToDispatch(store)
-
+  applyMiddlewares(store, middlewares)
   return store
 
 }
-
-
 export default initStore
+
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
+  // const store = createStore(
+  //   serviceApp, 
+  //   composeEnhancers(applyMiddleware(...middlewares))
+  // )
