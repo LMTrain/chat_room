@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { fetchServiceById } from 'actions'
 
 import Spinner from 'components/Spinner'
+import OfferModal from 'components/service/OfferModal'
 
 const ServiceDetail = props => {
 
@@ -15,7 +16,7 @@ const ServiceDetail = props => {
   }, [serviceId, fetchServiceById])
 
 
-  const { service } = props
+  const { service, auth } = props
 
   if (isFetching || serviceId !== service.id) { return <Spinner /> }
 
@@ -37,11 +38,11 @@ const ServiceDetail = props => {
                   {service.description}
               </h2>
               <br />
-              <p className="has-text-centered">
-                <button className="button is-medium is-info is-outlined">
-                  Learn more
-                </button>
-              </p>
+              <div className="has-text-centered">
+                <OfferModal 
+                  auth={auth}
+                  service={service}/>
+              </div>
             </div>
           </div>
         </div>
@@ -50,10 +51,11 @@ const ServiceDetail = props => {
   )
 }
 
-const mapStateToProps = ({selectedService}) => (
+const mapStateToProps = ({selectedService, auth}) => (
   {
     service: selectedService.item,
-    isFetching: selectedService.isFetching
+    isFetching: selectedService.isFetching,
+    auth
   }
 )
 
