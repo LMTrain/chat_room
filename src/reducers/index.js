@@ -1,19 +1,13 @@
-// import { FETCH_SERVICES_SUCCESS } from 'types'
 import { combineReducers } from 'redux'
 import services from './services'
 import selectedService from './selectedService'
-// import auth from './auth'
-// import offers from './offers'
-// import collaboration from './collaboration'
+import auth from './auth'
 
 const serviceApp = combineReducers({
   services,
-  selectedService
-  // auth,
-  // offers,
-  // collaboration
+  selectedService,
+  auth
 })
 
 
-// export const getMessages = state => state.auth.messages
 export default serviceApp

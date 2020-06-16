@@ -3,19 +3,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+const Navbar = props => {
 
-const Navbar = (props) => {
+  const { user, isAuth } = props.auth
   return (
     <nav 
       id={props.id || ''}
       className="navbar is-fresh is-transparent no-shadow" 
-      role="navigation" aria-label="main navigation">
+      role="navigation" 
+      aria-label="main navigation">
       <div className="container">
         <div className="navbar-brand">
           <Link 
             to="/"
             className="navbar-item">
-             <div className="title">Unity</div>
+             <div className="title">Servicario</div>
           </Link>
 
           <a className="navbar-item is-hidden-desktop is-hidden-tablet">
@@ -51,16 +53,25 @@ const Navbar = (props) => {
           </div>
 
           <div className="navbar-end">
-            <Link to="/" className="navbar-item is-secondary">
+            { user &&
+              <div className="navbar-item is-secondary user-welcome">
+                {`Hi ${user.fullName}`}
+              </div>
+            } 
+            <Link 
+              to="/" 
+              className="navbar-item is-secondary">
                 Home
             </Link>
-            <Link to="/services"
-                  className="navbar-item is-secondary">
-                  Services
+            <Link 
+              to="/services" 
+              className="navbar-item is-secondary">
+                Services
             </Link>
-            <Link to="/faq"
-                  className="navbar-item is-secondary">
-                  Faq
+            <Link 
+              to="/faq" 
+              className="navbar-item is-secondary">
+                Faq
             </Link>
             <div className="navbar-item has-dropdown is-hoverable">
               <a className="navbar-link">
@@ -79,18 +90,31 @@ const Navbar = (props) => {
                 </a>
               </div>
             </div>
-            <Link
-              to="/login"
-              className="navbar-item is-secondary modal-trigger" data-modal="auth-modal">
-                Login
-            </Link>
-            <Link
-              to="/register"
-              className="navbar-item">
-              <span className="button signup-button rounded secondary-btn raised">
-                Register
-              </span>
-            </Link>
+            { !isAuth &&
+              <React.Fragment>
+                <Link
+                  to="/login"
+                  className="navbar-item is-secondary modal-trigger" data-modal="auth-modal">
+                    Login
+                </Link>
+                <Link 
+                  to="/register"
+                  className="navbar-item">
+                  <span className="button signup-button rounded secondary-btn raised">
+                      Register
+                  </span>
+                </Link>
+              </React.Fragment>
+            }
+            { isAuth &&
+              <Link 
+                to="/"
+                className="navbar-item">
+                <span className="button signup-button is-danger rounded raised">
+                    Logout
+                </span>
+              </Link>
+            }
           </div>
         </div>
       </div>
