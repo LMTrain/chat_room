@@ -8,17 +8,16 @@ import Spinner from 'components/Spinner'
 const ServiceDetail = props => {
 
   const { serviceId } = useParams()
-  const { dispatch, isFetching } = props
+  const { fetchServiceById, isFetching } = props
 
   useEffect(() => {
-    dispatch(fetchServiceById(serviceId))
-  }, [serviceId, dispatch])
+    fetchServiceById(serviceId)
+  }, [serviceId, fetchServiceById])
 
 
   const { service } = props
 
-  if (serviceId !== service.id) { return <Spinner /> }
-  if (isFetching && !service.id) { return <Spinner /> }
+  if (isFetching || serviceId !== service.id) { return <Spinner /> }
 
   return (
     <section className="hero is-fullheight is-default is-bold">
@@ -58,4 +57,4 @@ const mapStateToProps = ({selectedService}) => (
   }
 )
 
-export default connect(mapStateToProps)(ServiceDetail)
+export default connect(mapStateToProps, {fetchServiceById})(ServiceDetail)
