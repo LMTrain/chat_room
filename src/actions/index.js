@@ -1,28 +1,42 @@
+import { 
+  FETCH_SERVICES_SUCCESS, 
+  FETCH_SERVICE_SUCCESS,
+  REQUEST_SERVICE } from 'types'
 
-import { FETCH_SERVICES_SUCCESS } from 'types'
+import * as api from 'api'
 
-import db from 'db'
-// import * as api from 'api'
+export const requestService = () => (
+  {
+    type: REQUEST_SERVICE
+  }
+)
 
-// export * from './services'
-// export * from './auth'
-// export * from './offers'
-// export * from './collaborations'
-// export * from './connection'
+export const resetPreviousService = () => (
+  {
+    type: FETCH_SERVICE_SUCCESS,
+    service: {}
+  }
+)
 
-// export const createRef = (collection, docId) => api.createRef(collection, docId)
-  
-export const fetchServices = () => {
-  
-  return db
-    .collection('services')
-    .get()
-    .then(snapshot => {
-      const services = snapshot.docs.map(doc => ({id: doc.id, ...doc.data()}))
-      return {
+export const fetchServices = () => 
+   api
+    .fetchServices()
+    .then(services => (
+      {
         type: FETCH_SERVICES_SUCCESS,
         services
       }
-    })
+    )
+  )
 
-}
+
+export const fetchServiceById = serviceId => 
+   api
+    .fetchServiceById(serviceId)
+    .then(service => (
+      {
+        type: FETCH_SERVICE_SUCCESS,
+        service
+      }
+    )
+  )

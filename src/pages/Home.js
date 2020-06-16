@@ -1,11 +1,11 @@
 /* eslint jsx-a11y/anchor-is-valid: 0 */
 
 import React from 'react'
-import { connect } from 'react-redux'
+import { connect } from 'react-redux' // HOC
 import Hero from 'components/Hero'
 import ServiceItem from 'components/service/ServiceItem'
 
-import {fetchServices } from 'actions'
+import { fetchServices } from 'actions'
 
 class Home extends React.Component {
 
@@ -15,19 +15,16 @@ class Home extends React.Component {
 
   componentDidMount() {
     this.props.dispatch(fetchServices())
-
   }
 
-  renderServices = (services) => 
+  renderServices = (services) =>
     services.map(service => <ServiceItem key={service.id} service={service} />)
-      
   
 
   render() {
     const { services } = this.props
-   
     return (
-      <div>       
+      <div>
         <Hero />
         <section className="section section-feature-grey is-medium">
           <div className="container">
@@ -49,5 +46,6 @@ class Home extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({services: state.service.items})
+const mapStateToProps = state => ({services: state.services.all})
+    
 export default connect(mapStateToProps)(Home)
