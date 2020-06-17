@@ -1,8 +1,10 @@
 import React from 'react'
 import withAuthorization from 'components/hoc/withAuthorization'
+import { withToastManager } from 'react-toast-notifications';
 import ServiceItem from 'components/service/ServiceItem'
 import { connect } from 'react-redux'
-import { fetchSentOffers } from 'actions'
+import { newMessage, newCollaboration } from 'helpers/offers'
+import { fetchSentOffers, collaborate } from 'actions'
 
 class SentOffers extends React.Component {
 
@@ -10,6 +12,20 @@ class SentOffers extends React.Component {
     const { auth } = this.props
     this.props.dispatch(fetchSentOffers(auth.user.uid))
   }
+
+  createCollaboration = offer => {
+    const { auth: { user }, toastManager} = this.props
+
+    const collaboration = newCollaboration({offer, fromUser: user})
+    const message = newMessage({offer, fromUser: user})
+
+    this.props.collaborate({collaboration, message})
+      .then(_ => 
+        toastManager.add('Collaboration was Created!', {
+          appearance: 'success',
+          autoDismiss: true })
+      )
+  } 
 
   render() {
     const { offers } = this.props
@@ -44,6 +60,14 @@ class SentOffers extends React.Component {
                       <span className="label">Time:</span> {offer.time} hours
                     </div>
                   </div>
+                  { offer.status === 'accepted' && !offer.collaborationCreated &&
+                    <div>
+                      <hr />
+                      <button 
+                        onClick={() => this.createCollaboration(offer)}
+                        className="button is-success">Collaborate</button>
+                    </div>
+                  }
                 </ServiceItem>
               </div>
               ))
@@ -56,7 +80,8 @@ class SentOffers extends React.Component {
 }
 
 const mapStateToProps = ({offers}) => ({ offers: offers.sent })
+const SentOffersWithToast = withToastManager(SentOffers)
 
 export default 
   withAuthorization(
-    connect(mapStateToProps)(SentOffers))
+    connect(mapStateToProps, {collaborate})(SentOffersWithToast))
