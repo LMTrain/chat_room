@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-
+import { CHANGE_OFFER_STATUS, FETCH_OFFERS_SUCCESS } from 'types'
 
 
 
@@ -12,8 +12,15 @@ const createOfferList = offersType => {
     }
 
     switch(action.type) {
-      case 'FETCH_OFFERS_SUCCESS':
+      case FETCH_OFFERS_SUCCESS:
         return action.offers
+      case CHANGE_OFFER_STATUS:
+        const nextState = [...state]
+        const offerIndex = nextState.findIndex(o => o.id === action.offerId)
+        nextState[offerIndex].status = action.status
+        return nextState
+      default:
+        return state
     }
 
     return state

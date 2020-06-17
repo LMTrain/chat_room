@@ -4,8 +4,6 @@ import { createRef } from './index'
 
 export const createOffer = offer => db.collection('offers').add(offer)
 
-
-
 export const fetchSentOffers = userId => {
   const userRef = createRef('profiles', userId)
   return db
@@ -15,7 +13,6 @@ export const fetchSentOffers = userId => {
     .then(snapshot => snapshot.docs.map(doc => ({id: doc.id, ...doc.data()})))
 }
 
-
 export const fetchReceivedOffers = userId => {
   const userRef = createRef('profiles', userId)
   return db
@@ -24,3 +21,8 @@ export const fetchReceivedOffers = userId => {
     .get()
     .then(snapshot => snapshot.docs.map(doc => ({id: doc.id, ...doc.data()})))
 }
+
+export const changeOfferStatus = (offerId, status) => 
+  db.collection('offers')
+    .doc(offerId)
+    .update({status})

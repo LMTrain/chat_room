@@ -3,13 +3,27 @@ import withAuthorization from 'components/hoc/withAuthorization'
 import ServiceItem from 'components/service/ServiceItem'
 import { connect } from 'react-redux'
 
-import { fetchReceivedOffers } from 'actions'
+import { fetchReceivedOffers, changeOfferStatus } from 'actions'
 
 class ReceivedOffers extends React.Component {
 
   componentDidMount() {
     const { auth } = this.props
-    this.props.dispatch(fetchReceivedOffers(auth.user.uid))
+    this.props.fetchReceivedOffers(auth.user.uid)
+  }
+
+  acceptOffer = offerId => {
+    this.props.changeOfferStatus(offerId, 'accepted')
+  }
+
+  declineOffer = offerId => {
+    this.props.changeOfferStatus(offerId, 'declined')
+  }
+
+  statusClass = status => {
+    if (status === 'pending') return 'is-warning'
+    if (status === 'accepted') return 'is-success'
+    if (status === 'declined') return 'is-danger'
   }
 
   render() {
@@ -27,7 +41,7 @@ class ReceivedOffers extends React.Component {
                   noButton
                   className="offer-card"
                   service={offer.service}>
-                  <div className="tag is-large">
+                  <div className={`tag is-large ${this.statusClass(offer.status)}`}>
                     {offer.status}
                   </div>
                   <hr />
@@ -45,6 +59,17 @@ class ReceivedOffers extends React.Component {
                       <span className="label">Time:</span> {offer.time} hours
                     </div>
                   </div>
+                  { offer.status === 'pending' &&
+                    <div>
+                      <hr />
+                      <button 
+                        onClick={() => this.acceptOffer(offer.id)} 
+                        className="button is-success s-m-r">Accept</button>
+                      <button 
+                        onClick={() => this.declineOffer(offer.id)} 
+                        className="button is-danger">Decline</button>
+                    </div>
+                  }
                 </ServiceItem>
               </div>
               ))
@@ -58,6 +83,11 @@ class ReceivedOffers extends React.Component {
 
 const mapStateToProps = ({offers}) => ({ offers: offers.received })
 
+const mapDispatchToProps = () => ({
+  changeOfferStatus,
+  fetchReceivedOffers
+})
+
 export default 
   withAuthorization(
-    connect(mapStateToProps)(ReceivedOffers))
+    connect(mapStateToProps, mapDispatchToProps())(ReceivedOffers))
