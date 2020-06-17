@@ -9,10 +9,15 @@ const Hero = () =>
       <div className="container">
         <div className="columns is-vcentered">
           <div className="column is-5 is-offset-1 landing-caption">
-            <h1 className="title is-1 is-bold is-spaced">
-                Learn, Collaborate.
-            </h1>
-            <h2 className="subtitle is-5 is-muted">Lorem ipsum sit dolor amet is a dummy text used by typography industry </h2>
+          <div className="title is-1 is-bold is-spaced">
+              <h1 >
+                  <b>Let's Unite,</b><br></br>
+                  <b>Collaborate, and</b><br></br>
+                  <b>Share ideas.</b>
+                  
+              </h1>
+            </div>
+            <h2 className="subtitle is-5 is-muted">We as a people need to unite as one, and be each others keeper.</h2>
             <p>
               <a className="button cta rounded primary-btn raised">
                   Get Started
@@ -21,7 +26,7 @@ const Hero = () =>
           </div>
           <div className="column is-5 is-offset-1">
             <figure className="image is-4by3">
-                <img src={process.env.PUBLIC_URL + '/worker.svg'} alt="Description" />
+            <img src={process.env.PUBLIC_URL + 'https://lmtrain.github.io/lm-images/assets/images/crm7_7.jpg'} alt="Description" />
             </figure>
           </div>
         </div>

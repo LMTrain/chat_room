@@ -132,7 +132,7 @@ class CollaborationDetail extends React.Component {
               <div className="viewChatBoard">
                 <div className="headerChatBoard">
                   <div className="headerChatUser">
-                    <img className="viewAvatarItem" src="https://i.imgur.com/cVDadwb.png" alt="icon avatar" />
+                    <img className="viewAvatarItem" src={user.avatar} alt="icon avatar" />
                     <span className="textHeaderChatBoard">{user.fullName}</span>
                   </div>
                   { status === 'notStarted' &&

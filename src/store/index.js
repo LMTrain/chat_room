@@ -1,3 +1,4 @@
+
 import { createStore, applyMiddleware, compose } from 'redux'
 import serviceApp from 'reducers'
 
@@ -21,4 +22,9 @@ const initStore = () => {
 }
 
 export default initStore
+
+
+
+
+
 

@@ -16,3 +16,4 @@ exports.addMessage = functions.https.onRequest(async (req, res) => {
   // Redirect with 303 SEE OTHER to the URL of the pushed object in the Firebase console.
   res.redirect(303, snapshot.ref.toString());
 });
+

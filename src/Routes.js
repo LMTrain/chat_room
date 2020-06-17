@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
@@ -7,6 +8,7 @@ import ProfilePage from './pages/Profile'
 import ServicesPage from './pages/Services'
 import ServiceDetailPage from './pages/ServiceDetail'
 import LoginPage from './pages/Login'
+import LogoutPage from './pages/Logout'
 import RegisterPage from './pages/Register'
 import SecretPage from './pages/Secret'
 
@@ -29,6 +31,9 @@ const Routes = () =>
     </Route>
     <Route path="/login">
       <LoginPage />
+    </Route>
+    <Route path="/logout">
+      <LogoutPage />
     </Route>
     <Route path="/collaborations/me">
       <ReceivedCollaborationsPage />
@@ -66,3 +71,7 @@ const Routes = () =>
   </Switch>
 
 export default Routes
+
+
+
+
