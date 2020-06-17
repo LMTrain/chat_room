@@ -1,3 +1,4 @@
+
 /* eslint no-useless-escape: 0 */
 
 import React from 'react'
@@ -49,7 +50,7 @@ const RegisterForm = (props) => {
                  name="avatar"
                  className="input is-large"
                  type="text"
-                 placeholder="Avatar (e.g https://i.imgur.com/cVDadwb.png)"/>
+                 placeholder="Avatar"/>
           { errors.avatar &&
             <div className="form-error">
               { errors.avatar.type === 'required' && <span className="help is-danger">Avatar is required</span> }

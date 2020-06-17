@@ -1,3 +1,6 @@
+
+
+
 import React from 'react'
 import withAuthorization from 'components/hoc/withAuthorization'
 import ServiceItem from 'components/service/ServiceItem'
@@ -12,7 +15,7 @@ class UserServices extends React.Component {
   }
 
   render() {
-    const { services } = this.props.auth.user
+    const { services } = this.props.auth
     return (
       <div className="container">
         <div className="content-wrapper">
@@ -35,3 +38,11 @@ class UserServices extends React.Component {
 
 
 export default withAuthorization(UserServices)
+
+
+
+
+
+
+
+

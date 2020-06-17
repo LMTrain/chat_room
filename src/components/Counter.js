@@ -12,11 +12,13 @@ function usePrevious(value) {
   return ref.current
 }
 
+
 const Counter = props => {
   const [count, setCount] = useState(0)
   const { title, onChange } = props
 
   const prevCount = usePrevious(count)
+  const prevTestCount = usePrevious(props.testNumber)
 
   const increment = () => {
     const newCount = count + 1
@@ -36,7 +38,9 @@ const Counter = props => {
       <button onClick={increment}>Increment</button>
        <div className="counter"> Current: {count} </div>
        <div className="counter"> Previous: {prevCount} </div>
-       <button onClick={decrement}>Decrement</button>
+       <h2>Current Test: {props.testNumber}</h2>
+       <h2>Previous Test: {prevTestCount}</h2>
+      <button onClick={decrement}>Decrement</button>
     </div>
   )
 }

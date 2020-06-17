@@ -35,7 +35,7 @@ class Home extends React.Component {
             </div>
 
             <div className="content-wrapper">
-              <div className="columns">
+              <div className="columns is-multiline">
                 { this.renderServices(services) }
               </div>
             </div>
@@ -49,4 +49,10 @@ class Home extends React.Component {
 const mapStateToProps = state => ({services: state.services.all})
     
 export default connect(mapStateToProps, {fetchServices})(Home)
+
+
+
+
+
+
 

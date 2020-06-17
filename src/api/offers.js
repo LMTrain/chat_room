@@ -1,3 +1,5 @@
+
+
 import db from 'db'
 import { createRef } from './index'
 
@@ -31,4 +33,12 @@ export const markOfferAsInCollaboration = offerId =>
   db.collection('offers')
     .doc(offerId)
     .update({collaborationCreated: true})
+
+
+
+
+
+
+
+
 
