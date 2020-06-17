@@ -1,7 +1,3 @@
-
-
-
-
 import firebase from 'firebase/app'
 import 'firebase/database'
 
@@ -16,12 +12,6 @@ export const isOnlineForDatabase = {
   state: 'online',
   last_changed: firebase.database.ServerValue.TIMESTAMP
 }
-
-export const isOnlineForFirestore = {
-  state: 'online',
-  last_changed: firebase.firestore.FieldValue.serverTimestamp()
-}
-
 
 export const onConnectionChanged = callback => 
   firebase
