@@ -13,7 +13,7 @@ const createOfferList = offersType => {
 
     switch(action.type) {
       case 'FETCH_OFFERS_SUCCESS':
-        return state
+        return action.offers
     }
 
     return state
