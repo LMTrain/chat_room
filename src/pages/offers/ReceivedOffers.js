@@ -37,9 +37,9 @@ class ReceivedOffers extends React.Component {
     return (
       <div className="container">
         <div className="content-wrapper">
-          <h1 className="title">Received Offers</h1>
+          <h1 className="title">Invitation Received</h1>
           { !isFetching && offers.length === 0 &&
-            <span className="tag is-warning is-large">You don't have any received offers :(</span>
+            <span className="tag is-warning is-large">You don't have any received invitations :(</span>
           }
           <div className="columns">
             { offers.map(offer => (
@@ -61,9 +61,9 @@ class ReceivedOffers extends React.Component {
                     <div>
                       <span className="label">Note:</span> {offer.note}
                     </div>
-                    <div>
+                    {/* <div>
                       <span className="label">Price:</span> ${offer.price}
-                    </div>
+                    </div> */}
                     <div>
                       <span className="label">Time:</span> {offer.time} hours
                     </div>

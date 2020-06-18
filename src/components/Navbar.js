@@ -76,13 +76,14 @@ const Navbar = props => {
               className="navbar-item is-secondary">
                 Home
             </Link>
-            <Link 
-              to="/faq" 
-              className="navbar-item is-secondary">
-                Faq
-            </Link>
+            
             { isAuth &&
               <React.Fragment>
+                <Link 
+                  to="/faq" 
+                  className="navbar-item is-secondary">
+                    Forum
+                </Link>
                 <div className="navbar-item has-dropdown is-hoverable">
                   <a className="navbar-link">
                       Manage
@@ -91,22 +92,22 @@ const Navbar = props => {
                     <Link 
                       to="/services/new"
                       className="navbar-item">
-                        Create Service
+                        Create Discussion Forum
                     </Link>
                     <Link 
                       to="/services/me"
                       className="navbar-item">
-                        Your Services
+                        Your Discussion Forum
                     </Link>
                     <Link 
                       to="/offers/sent"
                       className="navbar-item">
-                        Sent Offers
+                       Invitation Sent
                     </Link>
                     <Link 
                       to="/offers/received"
                       className="navbar-item">
-                        Received Offers
+                        Invitation Received
                     </Link>
                     <Link 
                       to="/collaborations/me"

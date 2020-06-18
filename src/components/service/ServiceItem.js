@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const ServiceItem = ({service, children, className, noButton}) => {
 
-  const shortText = (text, maxLength = 50) => {
+  const shortText = (text, maxLength = 30) => {
 
     if (!text) { return ' '}
     if (text.length <= maxLength ) { return text }
@@ -37,7 +37,7 @@ const ServiceItem = ({service, children, className, noButton}) => {
           <div className="card-action">
              <Link 
                 to={`/services/${service.id}`}
-                className="button btn-align-md accent-btn raised">Learn More</Link>
+                className="button btn-align-md accent-btn raised">Collaborate</Link>
           </div>
         }
       </div>

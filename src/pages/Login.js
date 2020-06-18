@@ -28,10 +28,10 @@ const Login = () => {
       <div className="container has-text-centered">
         <div className="column is-4 is-offset-4">
           <h3 className="title has-text-grey">Login</h3>
-          <p className="subtitle has-text-grey">Please login to proceed.</p>
+          <p className="subtitle has-text-grey">Please login to proceed or <a href="/register">Sign Up</a> &nbsp;·&nbsp;</p> 
           <div className="box">
             <figure className="avatar">
-              <img src="https://placehold.it/128x128" alt="Company Logo" />
+              <img src="https://lmtrain.github.io/lm-images/assets/images/crm5.jpg" width="228" height="328" alt="Login Logo" />
             </figure>
             <form onSubmit={handleSubmit(onLogin)}>
               <div className="field">
@@ -63,7 +63,7 @@ const Login = () => {
           </div>
           <p className="has-text-grey">
             <a>Sign In With Google</a>&nbsp;
-            <a href="/">Sign Up</a> &nbsp;·&nbsp;
+            <a href="/register">Sign Up</a> &nbsp;·&nbsp;
             <a href="../">Need Help?</a>
           </p>
         </div>

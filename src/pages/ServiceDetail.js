@@ -29,7 +29,7 @@ const ServiceDetail = props => {
           <div className="columns is-vcentered">
             <div className="column is-5">
               <figure className="image is-4by3">
-                 <img src={service.image} alt="Description" />
+                 <img src={service.image} alt="No choosen pic by owner" />
               </figure>
             </div>
             <div className="column is-6 is-offset-1">
@@ -51,8 +51,8 @@ const ServiceDetail = props => {
                 <div className="service-price">
                   <div className="media service-user">
                     <div className="media-content">
-                      <p className="title is-4">${service.price}</p>
-                      <p className="subtitle is-6">Per Hour</p>
+                      {/* <p className="title is-4">${service.price}</p>
+                      <p className="subtitle is-6">Per Hour</p> */}
                     </div>
                   </div>
                 </div>
@@ -68,12 +68,15 @@ const ServiceDetail = props => {
               </h2>
               <br />
               <div className="has-text-centered">
-                { auth.isAuth && auth.user.uid !== service.user.uid &&
+                { auth.isAuth && 
+                  auth.user.uid !== service.user.uid ?
                   <OfferModal 
                     auth={auth}
-                    service={service}/>
+                    service={service}
+                  /> : <p className="subtitle has-text-grey">Please login to proceed or <a href="/register">Sign Up</a> &nbsp; &nbsp;</p> 
                 }
               </div>
+             
             </div>
           </div>
         </div>

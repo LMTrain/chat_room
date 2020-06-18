@@ -31,7 +31,7 @@ const RegisterForm = (props) => {
       </div>
       <div className="field">
         <div className="control">
-          <input ref={register({required: true, minLength: 10})}
+          <input ref={register({required: true, minLength: 3})}
                  name="fullName"
                  className="input is-large"
                  type="text"
@@ -39,7 +39,7 @@ const RegisterForm = (props) => {
           { errors.fullName &&
             <div className="form-error">
               { errors.fullName.type === 'required' && <span className="help is-danger">Name is required</span> }
-              { errors.fullName.type === 'minLength' && <span className="help is-danger">Minimum length is 10 characters</span> }
+              { errors.fullName.type === 'minLength' && <span className="help is-danger">Minimum length is 3 characters</span> }
             </div>
           }
         </div>
@@ -50,7 +50,7 @@ const RegisterForm = (props) => {
                  name="avatar"
                  className="input is-large"
                  type="text"
-                 placeholder="Avatar"/>
+                 placeholder="Avatar Url - e.g https://i.postimg.cc/vBr9tb8b/futurecar9.jpg"/>
           { errors.avatar &&
             <div className="form-error">
               { errors.avatar.type === 'required' && <span className="help is-danger">Avatar is required</span> }

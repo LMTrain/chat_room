@@ -4,6 +4,7 @@ import React from 'react'
 import { connect } from 'react-redux' // HOC
 import Hero from 'components/Hero'
 import ServiceItem from 'components/service/ServiceItem'
+import ReceivedMessages from '../components/ReceivedMessages'
 
 import { fetchServices } from 'actions'
 
@@ -33,6 +34,7 @@ class Home extends React.Component {
               <h3 className="subtitle is-5 is-muted">With great Responsability</h3>
               <div className="divider is-centered"></div>
             </div>
+            <ReceivedMessages />
 
             <div className="content-wrapper">
               <div className="columns is-multiline">

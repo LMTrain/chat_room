@@ -49,17 +49,17 @@ const OfferModal = ({service, auth}) => {
   return (
     <Modal 
       onModalSubmit={handleSubmit}
-      openButtonText="Make an offer">
+      openButtonText="Request an Invite">
       <div className="field">
         <input
            onChange={handleChange}
            name="note"
            className="input is-large"
            type="text"
-           placeholder="Write some catchy note"
+           placeholder="Summarize what you will like to discuss"
            max="5"
            min="0"/>
-        <p className="help">Note can increase chance of getting the service</p>
+        <p className="help">Enter a note</p>
       </div>
       <div className="field">
         <input
@@ -67,19 +67,19 @@ const OfferModal = ({service, auth}) => {
            name="time"
            className="input is-large"
            type="number"
-           placeholder="How long you need service for ?"
+           placeholder="Total hours for discussion. est. ?"
            max="5"
            min="0"/>
         <p className="help">Enter time in hours</p>
       </div>
-      <div className="service-price has-text-centered">
+      {/* <div className="service-price has-text-centered">
         <div className="service-price-title">
           {service.user && `Uppon acceptance ${service.user.fullName}" will charge you:`}
         </div>
         <div className="service-price-value">
           <h1 className="title">{offer.price}$</h1>
         </div>
-      </div>
+      </div> */}
     </Modal>
   )
 }

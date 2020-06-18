@@ -26,13 +26,13 @@ const Register = (props) => {
           <p className="subtitle has-text-grey">Please Register to proceed.</p>
           <div className="box">
             <figure className="avatar">
-              <img src="https://placehold.it/128x128" alt="Company Logo" />
+            <img src="https://lmtrain.github.io/lm-images/assets/images/crm3.jpg" width="228" height="328" alt="Login Logo" />
             </figure>
             <RegisterForm onRegister={registerUser} />
           </div>
           <p className="has-text-grey">
             <a>Sign In With Google</a>&nbsp;
-            <a href="/">Sign Up</a> &nbsp;·&nbsp;
+            <a href="/login">Sign In</a> &nbsp;·&nbsp;
             <a href="../">Need Help?</a>
           </p>
         </div>

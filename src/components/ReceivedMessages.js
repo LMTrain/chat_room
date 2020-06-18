@@ -43,7 +43,7 @@ const ReceivedMessages = ({dispatch, messages}) => {
     )
 
     if (filteredMessages.length === 0) {
-      return <div className="navbar-item">No Messages :(</div>
+      return <div className="navbar-item"></div>
     }
 
     return filteredMessages

@@ -36,24 +36,27 @@ const ServiceCreate = ({auth}) => {
     <div className="create-page">
       <div className="container">
         <div className="form-container">
-          <h1 className="title">Create Service</h1>
+          <h1 className="title">Create Your own discussion Forum</h1>
           <form>
             <div className="field">
               <label className="label">Category</label>
               <div className="control">
                 <div className="select">
                   <select name="category" onChange={handleChange}>
-                    <option value="mathematics">Mathematics</option>
-                    <option value="programming">Programming</option>
-                    <option value="painting">Painting</option>
-                    <option value="singing">Singing</option>
-                    <option value="english">English</option>
+                    <option value="Relationship">Relationship</option>
+                    <option value="Family">Family</option>
+                    <option value="Job">Job</option>
+                    <option value="singing">Slavery</option>
+                    <option value="Slavery">Colonization</option>
+                    <option value="Immigration">Immigration</option>
+                    <option value="Marriage">Marriage</option>
+                    <option value="Policing">Policing</option>
                   </select>
                 </div>
               </div>
             </div>
             <div className="field">
-              <label className="label">Title</label>
+              <label className="label">Topic</label>
               <div className="control">
                 <input
                   onChange={handleChange}
@@ -74,18 +77,18 @@ const ServiceCreate = ({auth}) => {
               </div>
             </div>
             <div className="field">
-              <label className="label">Image Url</label>
+              <label className="label">Image Url (You can click link to create your Image Url)<a href="https://postimages.org/" target="_blank" rel="noopener noreferrer"> Create your own image url </a> Copy "Direct link"</label>
               <div className="control">
                 <input
                   onChange={handleChange}
                   name="image"
                   className="input"
                   type="text"
-                  placeholder="Text input" />
+                  placeholder="e.g https://i.postimg.cc/vBr9tb8b/futurecar9.jpg" />
               </div>
             </div>
             <div className="field">
-              <label className="label">Price per Hour</label>
+              <label className="label">Select Maximum discussion Time</label>
               <div className="control">
                 <input
                   onChange={handleChange}
