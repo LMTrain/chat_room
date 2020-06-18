@@ -46,8 +46,8 @@ const ServiceCreate = ({auth}) => {
                     <option value="Relationship">Relationship</option>
                     <option value="Family">Family</option>
                     <option value="Job">Job</option>
-                    <option value="singing">Slavery</option>
-                    <option value="Slavery">Colonization</option>
+                    <option value="Slavery">Slavery</option>
+                    <option value="Colonization">Colonization</option>
                     <option value="Immigration">Immigration</option>
                     <option value="Marriage">Marriage</option>
                     <option value="Policing">Policing</option>
