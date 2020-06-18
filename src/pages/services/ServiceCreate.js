@@ -11,7 +11,7 @@ const ServiceCreate = ({auth}) => {
 
   const [ redirect, setRedirect ] = useState(false)
   const [ serviceForm, setServiceForm ] = useState({
-    category: 'mathematics',
+    category: 'Relationship',
     title: '',
     description: '',
     image: '',

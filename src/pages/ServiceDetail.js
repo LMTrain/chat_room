@@ -7,6 +7,8 @@ import { fetchServiceById } from 'actions'
 import Spinner from 'components/Spinner'
 import OfferModal from 'components/service/OfferModal'
 
+var noticeText = " "
+var noticeSignup = " "
 const ServiceDetail = props => {
 
   const { serviceId } = useParams()
@@ -19,7 +21,12 @@ const ServiceDetail = props => {
 
   const { service, auth } = props
   const { user } = service
-
+  console.log(auth.user )
+  console.log(service)
+  if (auth.user === null) {
+    noticeText = "Please login to proceed or"
+    noticeSignup = "Sign Up"
+  }
   if (isFetching || serviceId !== service.id) { return <Spinner /> }
 
   return (
@@ -73,7 +80,7 @@ const ServiceDetail = props => {
                   <OfferModal 
                     auth={auth}
                     service={service}
-                  /> : <p className="subtitle has-text-grey">Please login to proceed or <a href="/register">Sign Up</a> &nbsp; &nbsp;</p> 
+                  /> : <p className="subtitle has-text-grey">{noticeText} <a href="/register"> <b>{noticeSignup}</b> </a> &nbsp; &nbsp;</p> 
                 }
               </div>
              
