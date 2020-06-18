@@ -77,7 +77,7 @@ const ServiceCreate = ({auth}) => {
               </div>
             </div>
             <div className="field">
-              <label className="label">Image Url (You can click link to create your Image Url)<a href="https://postimages.org/" target="_blank" rel="noopener noreferrer"> Create your own image url </a> Copy "Direct link"</label>
+              <label className="label">Image Url - <a href="https://postimages.org/" target="_blank" rel="noopener noreferrer"> Click to Create your own Image Url & copy "Direct link"</a> </label>
               <div className="control">
                 <input
                   onChange={handleChange}
@@ -106,7 +106,7 @@ const ServiceCreate = ({auth}) => {
                   className="button is-link">Create</button>
               </div>
               <div className="control">
-                <button className="button is-text">Cancel</button>
+                <button className="button is-text"> <a href="/register"> Cancel</a> &nbsp;&nbsp;</button>
               </div>
             </div>
           </form>

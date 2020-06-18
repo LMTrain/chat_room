@@ -45,8 +45,9 @@ const RegisterForm = (props) => {
         </div>
       </div>
       <div className="field">
+      <span><a href="https://postimages.org/" target="_blank" rel="noopener noreferrer"> Click to create your Avatar url & copy "Direct link"</a> </span>
         <div className="control">
-          <input ref={register({required: true, validate: {isValidImage, isValidUrl}})}
+          <input ref={register({required: false, validate: {isValidImage, isValidUrl}})}
                  name="avatar"
                  className="input is-large"
                  type="text"
