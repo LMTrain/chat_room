@@ -72,6 +72,9 @@ class ReceivedCollaborations extends React.Component {
             { this.renderCollaborations(collaborations) }
           </div>
         </div>
+        <footer style={{textAlign: 'center'}}>
+          <span>copyright &copy; LM Systems LLC 2020</span>
+        </footer>
       </div>
     )
   }

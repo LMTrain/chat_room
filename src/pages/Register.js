@@ -31,12 +31,15 @@ const Register = (props) => {
             <RegisterForm onRegister={registerUser} />
           </div>
           <p className="has-text-grey">
-            <a>Sign In With Google</a>&nbsp;
+            {/* <a>Sign In With Google</a>&nbsp; */}
             <a href="/login">Sign In</a> &nbsp;·&nbsp;
-            <a href="../">Need Help?</a>
+            <a href="/help">Need Help?</a>
           </p>
         </div>
       </div>
+      <footer style={{textAlign: 'center'}}>
+      <span>copyright &copy; LM Systems LLC 2020</span>
+      </footer>
     </div>
   )
 }

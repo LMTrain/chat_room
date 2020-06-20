@@ -134,6 +134,11 @@ const Navbar = props => {
                     Login
                 </Link>
                 <Link 
+                  to="/help" 
+                  className="navbar-item is-secondary">
+                    Help
+                </Link>
+                <Link 
                   to="/register"
                   className="navbar-item">
                   <span className="button signup-button rounded secondary-btn raised">
@@ -143,13 +148,20 @@ const Navbar = props => {
               </React.Fragment>
             }
             { isAuth &&
-              <Link 
-                to="/logout"
-                className="navbar-item">
-                <span className="button signup-button is-danger rounded raised">
-                    Logout
-                </span>
-              </Link>
+              <React.Fragment>
+                <Link 
+                  to="/help" 
+                  className="navbar-item is-secondary">
+                    Help
+                </Link>
+                <Link 
+                  to="/logout"
+                  className="navbar-item">
+                  <span className="button signup-button is-danger rounded raised">
+                      Logout
+                  </span>
+                </Link>
+              </React.Fragment>
             }
           </div>
         </div>

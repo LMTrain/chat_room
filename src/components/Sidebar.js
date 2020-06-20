@@ -39,6 +39,11 @@ const Sidebar = () => {
               <li><a href="#">App settings</a></li>
             </ul>
           </li>
+          <li className="have-children"><a href="#">Help</a>
+            <ul>
+              <li><a href="/help">Send email</a></li>             
+            </ul>
+          </li>
         </ul>
       </div>
     </div>

@@ -62,12 +62,15 @@ const Login = () => {
             </form>
           </div>
           <p className="has-text-grey">
-            <a>Sign In With Google</a>&nbsp;
+            {/* <a>Sign In With Google</a>&nbsp; */}
             <a href="/register">Sign Up</a> &nbsp;·&nbsp;
-            <a href="../">Need Help?</a>
+            <a href="/help">Need Help?</a>
           </p>
         </div>
       </div>
+      <footer style={{textAlign: 'center'}}>
+      <span>copyright &copy; LM Systems LLC 2020</span>
+      </footer>
     </div>
   )
 }

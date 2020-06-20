@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom'
 
 import HomePage from './pages/Home'
 import FaqPage from './pages/Faq'
+import HelpPage from './pages/Help'
 import ProfilePage from './pages/Profile'
 import ServicesPage from './pages/Services'
 import ServiceDetailPage from './pages/ServiceDetail'
@@ -64,6 +65,9 @@ const Routes = () =>
     </Route>
     <Route path="/faq">
       <FaqPage />
+    </Route>
+    <Route path="/help">
+      <HelpPage />
     </Route>
     <Route path="/">
       <HomePage />

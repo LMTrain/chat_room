@@ -14,6 +14,9 @@ const Faq = (props) => {
           <br></br>
           <img src="https://lmtrain.github.io/lm-images/assets/images/crm3.jpg"  alt="Login Logo" />
         </figure>
+      <footer style={{textAlign: 'center'}}>
+        <span>copyright &copy; LM Systems LLC 2020</span>
+      </footer>
     </div>
   )
 }

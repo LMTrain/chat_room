@@ -130,10 +130,11 @@ class CollaborationDetail extends React.Component {
             </div>
             <div className="viewBoard">
               <div className="viewChatBoard">
+                <h1 style={{fontSize: 26, fontWeight: 'bold'}}>{collaboration.title}</h1>
                 <div className="headerChatBoard">
                   <div className="headerChatUser">
-                    <img className="viewAvatarItem" src={user.avatar} alt="icon avatar" />
-                    <span className="textHeaderChatBoard">{user.fullName}</span>
+                    <img className="viewAvatarItem" src={user.avatar} alt={user.fullName} />
+                    <span className="textHeaderChatBoard">{user.fullName}</span><br></br>
                   </div>
                   { status === 'notStarted' &&
                     <div className="headerChatButton">
@@ -177,6 +178,9 @@ class CollaborationDetail extends React.Component {
             </div>
           </div>
         </div>
+        <footer style={{textAlign: 'center'}}>
+          <span>copyright &copy; LM Systems LLC 2020</span>
+        </footer>
       </div>
     )
   }

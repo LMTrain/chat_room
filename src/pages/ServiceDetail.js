@@ -83,7 +83,9 @@ const ServiceDetail = props => {
                   /> : <p className="subtitle has-text-grey">{noticeText} <a href="/register"> <b>{noticeSignup}</b> </a> &nbsp; &nbsp;</p> 
                 }
               </div>
-             
+                <footer style={{textAlign: 'center'}}>
+                <span>copyright &copy; LM Systems LLC 2020</span>
+                </footer>
             </div>
           </div>
         </div>

@@ -55,9 +55,10 @@ class Logout extends React.Component {
             </div>
           </Col>
           </Row>
-          
-          
         </div>
+        <footer style={{textAlign: 'center'}}>
+          <span>copyright &copy; LM Systems LLC 2020</span>
+        </footer>
       </div>
     )
   }

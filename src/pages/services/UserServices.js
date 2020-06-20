@@ -31,6 +31,9 @@ class UserServices extends React.Component {
             }
           </div>
         </div>
+        <footer style={{textAlign: 'center'}}>
+          <span>copyright &copy; LM Systems LLC 2020</span>
+        </footer>
       </div>
     )
   }
