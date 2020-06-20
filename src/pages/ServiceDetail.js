@@ -21,8 +21,9 @@ const ServiceDetail = props => {
 
   const { service, auth } = props
   const { user } = service
-  console.log(auth.user )
-  console.log(service)
+  // console.log(auth.user )
+  // console.log(service)
+  // console.log(auth)
   if (auth.user === null) {
     noticeText = "Please login to proceed or"
     noticeSignup = "Sign Up"
