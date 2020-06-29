@@ -1,17 +1,21 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
 import withAuthorization from 'components/hoc/withAuthorization'
 import '../pages/Home.css'
 
-
-
-import React from 'react'
 
 const Faq = (props) => {
   return (
     <div style={{textAlign: 'center', marginTop: 50 }}>
       <h1 className="title">Join The Forum</h1>
-      <a href="https://calendly.com/africanamerican_african-forum/african-americans-and-africans-forum-collaborate" className="button cta rounded primary-btn raised" target="_blank" rel="noopener noreferrer">Request an Invite to join and participate in the forum</a>
-      <br></br><h1 style={{fontSize: 28, fontWeight: "bold"}}>Or</h1>
-      <br></br><h1 style={{fontSize: 28, fontWeight: "bold"}}>Click forum date in calender to join and listen to participants in the forum.</h1>
+      <h1 style={{fontSize: 24, fontWeight: "bold"}}>Click forum date in calender to join and listen to participants in the forum.</h1>
+      <h1 style={{fontSize: 24, fontWeight: "bold"}}>Or</h1>
+      <Link 
+        to="/forums"
+        className="button cta rounded primary-btn raised">Watch Past Forums</Link>
+      
+      {/* <a href="https://calendly.com/africanamerican_african-forum/african-americans-and-africans-forum-collaborate" className="button cta rounded primary-btn raised" target="_blank" rel="noopener noreferrer">Request an Invite to join and participate in the forum</a> */}
+      
       {/* <a href="https://calendly.com/africanamerican_african-forum" className="button cta rounded primary-btn raised" target="_blank" rel="noopener noreferrer">Request an Invite to Listen to the forum</a> */}
       {/* <a href="https://calendar.google.com/calendar/embed?src=service%40lmsystemsllc.com&ctz=America%2FChicago" className="button cta rounded primary-btn raised" target="_blank" rel="noopener noreferrer">Request an Invite to Listen to the forum</a> */}
      

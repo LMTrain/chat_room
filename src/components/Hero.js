@@ -17,10 +17,10 @@ const Hero = () =>
                   <b>Share ideas.</b>
               </h1>
             </div>
-            <h2 className="subtitle is-5 is-muted">We as a people need to unite as one, and be each others keeper. <b>Join the Forum!</b></h2>
+            <h2 className="subtitle is-5 is-muted">We as a people need to unite as one, and be each others keeper. </h2>
               <Link 
                 to="/faq"
-                className="button cta rounded primary-btn raised">Request an Invitation to join a Forum</Link>
+                className="button cta rounded primary-btn raised">Join The Forum</Link>
           </div>
           <div className="column is-5 is-offset-1">
             <figure className="image is-4by3">
