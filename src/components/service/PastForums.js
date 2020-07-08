@@ -13,9 +13,9 @@ const PastForums = () => {
                       title: "African Americans and Africans Forum 1",
                       date: "June 27th, 2020",
                       time: "7pm - 9pm CST",
-                      facilitators: "Laycon Muriziq & Pastor Babatope",
-                      participants: "Alisa Higgins, Kevin Washington, Ola Olademeji, & Oluwaleye",
-                      audience: "Micah Cherina & Omotola O",
+                      facilitators: "Laycon Muriziq and Pastor Babatope",
+                      participants: "Alisa Higgins, Kevin Washington, Ola Olademeji, and Oluwaleye",
+                      audience: "Micah Cherina and Omotola O",
                       image: "https://lmtrain.github.io/lm-images/assets/images/crm4.jpg",
                       videoLink: "https://zoom.us/rec/share/uOF8Ce7K2X9Oa4mKsn71RZQsPIGmX6a823BLrPAPnTK4KCGSh0vU3s23zPa9hNY",
                       password: "4G*!h%6q"      
