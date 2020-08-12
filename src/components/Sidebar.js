@@ -30,7 +30,7 @@ const Sidebar = () => {
           <li className="have-children"><a href="#">Images</a>
             <ul>
               <li><a href="https://lmtrain.github.io/lm-images/assets/images/crm8.jpg">Library</a></li>
-              <li><a href="#">Upload</a></li>
+              <li><a href="https://lm-porfolio.herokuapp.com/">Upload</a></li>
             </ul>
           </li>
           <li className="have-children"><a href="#">Settings</a>
