@@ -19,7 +19,7 @@ class UserServices extends React.Component {
     return (
       <div className="container">
         <div className="content-wrapper">
-          <h1 className="title">My Discussion Forum</h1>
+          <h1 className="title">Your Discussion Forum</h1>
           <div className="columns is-multiline">
             {
               services.map(s => (
