@@ -19,7 +19,7 @@ class UserServices extends React.Component {
     return (
       <div className="container">
         <div className="content-wrapper">
-          <h1 className="title">Your Discussion Forum</h1>
+          <h1 className="title">My Discussion Forum</h1>
           <div className="columns is-multiline">
             {
               services.map(s => (
@@ -31,9 +31,9 @@ class UserServices extends React.Component {
             }
           </div>
         </div>
-        {/* <footer style={{textAlign: 'center'}}>
+        <footer style={{textAlign: 'center'}}>
           <span>copyright &copy; LM Systems LLC 2020</span>
-        </footer> */}
+        </footer>
       </div>
     )
   }
