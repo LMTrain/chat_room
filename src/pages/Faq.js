@@ -28,7 +28,7 @@ const Faq = (props) => {
       <br></br>
         <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FChicago&amp;src=c2VydmljZUBsbXN5c3RlbXNsbGMuY29t&amp;color=%23039BE5&amp;mode=MONTH&amp;showPrint=0&amp;showTabs=0&amp;showTitle=1&amp;showNav=0&amp;showCalendars=1" style={{ width: 1000, height: 600, frameBorder: 0, scrolling: "no"}} title=" Listening "></iframe>
       <footer style={{textAlign: 'center'}}>
-        <span>copyright &copy; LM Systems LLC 2020</span>
+        <span>&copy; LM Systems LLC {new Date().getFullYear()}</span>
       </footer>
     </div>
   )

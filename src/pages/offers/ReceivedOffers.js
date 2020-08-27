@@ -86,7 +86,7 @@ class ReceivedOffers extends React.Component {
           </div>
         </div>
         <footer style={{textAlign: 'center'}}>
-          <span>copyright &copy; LM Systems LLC 2020</span>
+          <span>&copy; LM Systems LLC {new Date().getFullYear()}</span>
         </footer>
       </div>
     )
